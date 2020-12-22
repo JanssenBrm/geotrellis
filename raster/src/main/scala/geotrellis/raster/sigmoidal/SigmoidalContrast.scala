@@ -44,7 +44,7 @@ object SigmoidalContrast {
         (intensity + (1<<(bits-1))) / ((1<<bits)-1)
     }
 
-    val numer = 1/(1+math.exp(beta*(alpha-u))) - 1/(1+math.exp(beta))
+    val numer = 1/(1+math.exp(beta*(alpha-u))) - 1/(1+math.exp(beta*alpha))
     val denom = 1/(1+math.exp(beta*(alpha-1))) - 1/(1+math.exp(beta*alpha))
     val gu = math.max(0.0, math.min(1.0, numer / denom))
 
